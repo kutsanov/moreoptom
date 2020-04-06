@@ -11,6 +11,7 @@
 		4F57C2CE243A0C5800914250 /* MainStatFishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57C2CD243A0C5800914250 /* MainStatFishTableViewCell.swift */; };
 		4F57C2D0243A0DF100914250 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57C2CF243A0DF100914250 /* Utils.swift */; };
 		4F57C2D2243A499A00914250 /* PriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57C2D1243A499A00914250 /* PriceTableViewCell.swift */; };
+		4F57C2D7243B952400914250 /* SpinerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57C2D6243B952400914250 /* SpinerTableViewCell.swift */; };
 		4F62B4252431098700921898 /* MainStatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62B4242431098700921898 /* MainStatTableViewCell.swift */; };
 		4F700A9B242868F70044A8AF /* BoardPrefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F700A9A242868F70044A8AF /* BoardPrefTableViewController.swift */; };
 		4F700A9D242869120044A8AF /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F700A9C242869120044A8AF /* BoardViewController.swift */; };
@@ -25,7 +26,7 @@
 		4FF070E024259D8600BC2577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FF070DF24259D8600BC2577 /* Assets.xcassets */; };
 		4FF070E324259D8600BC2577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF070E124259D8600BC2577 /* LaunchScreen.storyboard */; };
 		4FF070F02425B25400BC2577 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070EF2425B25400BC2577 /* PriceViewController.swift */; };
-		4FF070F42425C95E00BC2577 /* PriceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070F32425C95E00BC2577 /* PriceItem.swift */; };
+		4FF070F42425C95E00BC2577 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070F32425C95E00BC2577 /* Price.swift */; };
 		4FF070F72425CA4300BC2577 /* UtilsSelectOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070F62425CA4300BC2577 /* UtilsSelectOption.swift */; };
 		4FF070F92425D79B00BC2577 /* UtilsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070F82425D79B00BC2577 /* UtilsSelect.swift */; };
 		4FF070FB2425E45B00BC2577 /* UtilsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070FA2425E45B00BC2577 /* UtilsSettings.swift */; };
@@ -36,6 +37,7 @@
 		4F57C2CD243A0C5800914250 /* MainStatFishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatFishTableViewCell.swift; sourceTree = "<group>"; };
 		4F57C2CF243A0DF100914250 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4F57C2D1243A499A00914250 /* PriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTableViewCell.swift; sourceTree = "<group>"; };
+		4F57C2D6243B952400914250 /* SpinerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerTableViewCell.swift; sourceTree = "<group>"; };
 		4F62B4242431098700921898 /* MainStatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatTableViewCell.swift; sourceTree = "<group>"; };
 		4F700A9A242868F70044A8AF /* BoardPrefTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPrefTableViewController.swift; sourceTree = "<group>"; };
 		4F700A9C242869120044A8AF /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +54,7 @@
 		4FF070E224259D8600BC2577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FF070E424259D8600BC2577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FF070EF2425B25400BC2577 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
-		4FF070F32425C95E00BC2577 /* PriceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceItem.swift; sourceTree = "<group>"; };
+		4FF070F32425C95E00BC2577 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		4FF070F62425CA4300BC2577 /* UtilsSelectOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsSelectOption.swift; sourceTree = "<group>"; };
 		4FF070F82425D79B00BC2577 /* UtilsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsSelect.swift; sourceTree = "<group>"; };
 		4FF070FA2425E45B00BC2577 /* UtilsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsSettings.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 				4FDC214A2430FE320034E2B8 /* MainTableViewController.swift */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		4F57C2D5243B951200914250 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4F57C2D6243B952400914250 /* SpinerTableViewCell.swift */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 		4F7525752433B6730096F434 /* mainVC */ = {
@@ -139,6 +149,7 @@
 		4FF070EC24259FFB00BC2577 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				4F57C2D5243B951200914250 /* helpers */,
 				4F57C2D4243A586F00914250 /* main */,
 				4F57C2D3243A585D00914250 /* price */,
 				4FBD83AC2428EAF1006F04D9 /* CompanyViewController.swift */,
@@ -162,7 +173,7 @@
 		4FF070F22425C91E00BC2577 /* price */ = {
 			isa = PBXGroup;
 			children = (
-				4FF070F32425C95E00BC2577 /* PriceItem.swift */,
+				4FF070F32425C95E00BC2577 /* Price.swift */,
 			);
 			path = price;
 			sourceTree = "<group>";
@@ -254,6 +265,7 @@
 				4FDC214B2430FE320034E2B8 /* MainTableViewController.swift in Sources */,
 				4F700A9D242869120044A8AF /* BoardViewController.swift in Sources */,
 				4F57C2CE243A0C5800914250 /* MainStatFishTableViewCell.swift in Sources */,
+				4F57C2D7243B952400914250 /* SpinerTableViewCell.swift in Sources */,
 				4FBD83AF2428EB02006F04D9 /* CompanyPrefTableViewController.swift in Sources */,
 				4F57C2CC2439C9DC00914250 /* NetworkManager.swift in Sources */,
 				4FF070F72425CA4300BC2577 /* UtilsSelectOption.swift in Sources */,
@@ -263,7 +275,7 @@
 				4FF070F92425D79B00BC2577 /* UtilsSelect.swift in Sources */,
 				4FF070F02425B25400BC2577 /* PriceViewController.swift in Sources */,
 				4F57C2D0243A0DF100914250 /* Utils.swift in Sources */,
-				4FF070F42425C95E00BC2577 /* PriceItem.swift in Sources */,
+				4FF070F42425C95E00BC2577 /* Price.swift in Sources */,
 				4FBD83AD2428EAF1006F04D9 /* CompanyViewController.swift in Sources */,
 				4F700A9B242868F70044A8AF /* BoardPrefTableViewController.swift in Sources */,
 				4F887A272426FCF500E13E57 /* PricePrefTableViewController.swift in Sources */,

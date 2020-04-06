@@ -12,6 +12,10 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var olTableView: UITableView!
     
+    private var tovars = [PriceItem]()
+    
+    private var fetchinMore = false
+    private var currentPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,34 +23,86 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
         olTableView.estimatedRowHeight = 44.0
         olTableView.rowHeight = UITableView.automaticDimension
         
-        
-        //olTableView.rowHeight = 40
+        olTableView.translatesAutoresizingMaskIntoConstraints = false
         
         self.navigationController?.navigationBar.barTintColor = UtilsSettings.shared.colorBgTint
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UtilsSettings.shared.colorTint]
         self.navigationController?.navigationBar.tintColor = UtilsSettings.shared.colorTint
         
+        Price().fetchData(with: currentPage) { (obj) in
+            DispatchQueue.main.async {
+                self.tovars = obj.tovars ?? []
+                self.olTableView.reloadData()
+            }
+        }
+        
     }
-    //RGB(0, 109, 218)
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if section == 0 {
+            return tovars.count
+        } else if section == 1 && fetchinMore {
+            return 1
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = olTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PriceTableViewCell
         
-        if indexPath.row == 2 {
-            cell.olNote.text = "dgf lsdf jsd slfh dl dslfh sdlfh slfds kh sldfh sld fsdhl sdl fsldkf sdljfh sdlf sldkfhldf sld sdlfh slf dgf lsdf jsd slfh dl dslfh sdlfh slfds kh sldfh sld fsdhl sdl fsldkf sdljfh sdlf sldkfhldf sld sdlfh slfdgf lsdf jsd slfh dl dslfh sdlfh slfds kh sldfh sld fsdhl sdl fsldkf sdljfh sdlf sldkfhldf sld sdlfh slfdgf lsdf jsd slfh dl dslfh sdlfh slfds kh sldfh sld fsdhl sdl fsldkf sdljfh sdlf sldkfhldf sld sdlfh slf"
+        if indexPath.section == 0 {
+            let tovar = tovars[indexPath.row]
+            
+            if tovar.photo == nil {
+                let cell = olTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PriceTableViewCell
+                cell.tovar = tovar
+                return cell
+            } else {
+                let cell = olTableView.dequeueReusableCell(withIdentifier: "cellPhoto", for: indexPath) as! PriceTableViewCell
+                cell.tovar = tovar
+                return cell
+            }
+        } else {
+            let cell = olTableView.dequeueReusableCell(withIdentifier: "cellLoading", for: indexPath) as! SpinerTableViewCell
+            cell.olSpiner.startAnimating()
+            return cell
         }
-                
-        return cell
         
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.height {
+            if !fetchinMore {
+                fetchData()
+            }
+            
+        }
+    }
+    
+    private func fetchData() {
+        fetchinMore = true
+        currentPage += 1
+        olTableView.reloadSections(IndexSet(integer: 1), with: .none)
+        Price().fetchData(with: currentPage) { (obj) in
+            DispatchQueue.main.async {
+                let tovars = obj.tovars ?? []
+                self.tovars.append(contentsOf: tovars)
+                self.olTableView.reloadData()
+                self.fetchinMore = false
+            }
+        }
     }
     
 

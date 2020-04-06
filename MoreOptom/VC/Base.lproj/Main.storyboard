@@ -74,17 +74,108 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="olCost" destination="e02-iC-wSm" id="uJb-TF-Zkk"/>
+                                            <outlet property="olName" destination="3fT-1N-CPB" id="fVe-ZR-Vat"/>
                                             <outlet property="olNote" destination="eCe-Kn-vQV" id="RMH-77-LJP"/>
+                                            <outlet property="olOblast" destination="vWi-HH-t3V" id="aud-fN-qnX"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellPhoto" rowHeight="80" id="cIr-KR-vwn" customClass="PriceTableViewCell" customModule="MoreOptom" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="127" width="320" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellPhoto" rowHeight="120" id="cIr-KR-vwn" customClass="PriceTableViewCell" customModule="MoreOptom" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="127" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cIr-KR-vwn" id="tZO-WI-grx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Горбуша свежемороженная" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWA-TB-iul">
+                                                    <rect key="frame" x="10" y="5" width="300" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tLQ-cR-fpm">
+                                                    <rect key="frame" x="100" y="34" width="210" height="67"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1Lm-Ve-Zdu">
+                                                            <rect key="frame" x="0.0" y="0.0" width="210" height="32"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новосибирская область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdI-nq-uEK">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="16"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дополнительное описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xee-s5-gkh">
+                                                                    <rect key="frame" x="0.0" y="16" width="170.5" height="16"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="от 150 р." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7r-vD-6yB">
+                                                            <rect key="frame" x="0.0" y="32" width="210" height="35"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoFish" translatesAutoresizingMaskIntoConstraints="NO" id="THM-XG-gW5">
+                                                    <rect key="frame" x="10" y="34" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="4yJ-Kf-v1r"/>
+                                                        <constraint firstAttribute="height" constant="80" id="ctr-79-ew7"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="MWA-TB-iul" secondAttribute="trailing" constant="10" id="8rV-bf-osw"/>
+                                                <constraint firstItem="MWA-TB-iul" firstAttribute="leading" secondItem="tZO-WI-grx" secondAttribute="leading" constant="10" id="8ry-gU-Kp5"/>
+                                                <constraint firstAttribute="bottom" secondItem="THM-XG-gW5" secondAttribute="bottom" constant="6" id="Adt-bI-CVf"/>
+                                                <constraint firstItem="tLQ-cR-fpm" firstAttribute="leading" secondItem="THM-XG-gW5" secondAttribute="trailing" constant="10" id="AjI-4e-tbj"/>
+                                                <constraint firstItem="THM-XG-gW5" firstAttribute="top" secondItem="MWA-TB-iul" secondAttribute="bottom" constant="5" id="GA0-GA-Mud"/>
+                                                <constraint firstItem="tLQ-cR-fpm" firstAttribute="top" secondItem="MWA-TB-iul" secondAttribute="bottom" constant="5" id="jzL-Lx-0i0"/>
+                                                <constraint firstAttribute="trailing" secondItem="tLQ-cR-fpm" secondAttribute="trailing" constant="10" id="tzd-5G-EVP"/>
+                                                <constraint firstItem="MWA-TB-iul" firstAttribute="top" secondItem="tZO-WI-grx" secondAttribute="top" constant="5" id="vIa-p9-L1m"/>
+                                                <constraint firstItem="THM-XG-gW5" firstAttribute="leading" secondItem="tZO-WI-grx" secondAttribute="leading" constant="10" id="xpm-Jc-VSU"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tLQ-cR-fpm" secondAttribute="bottom" constant="5" id="yxK-Cq-6DS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="olCost" destination="c7r-vD-6yB" id="VUN-Wz-KUu"/>
+                                            <outlet property="olImage" destination="THM-XG-gW5" id="Vdm-fo-CyQ"/>
+                                            <outlet property="olName" destination="MWA-TB-iul" id="y7A-i8-AtJ"/>
+                                            <outlet property="olNote" destination="xee-s5-gkh" id="C6Y-g5-udZ"/>
+                                            <outlet property="olOblast" destination="GdI-nq-uEK" id="j2f-kb-1uB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellLoading" rowHeight="40" id="opY-8c-1na" customClass="SpinerTableViewCell" customModule="MoreOptom" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="247" width="320" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="opY-8c-1na" id="cOA-KB-UpG">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bUK-r0-oXA">
+                                                    <rect key="frame" x="150" y="10" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bUK-r0-oXA" firstAttribute="centerX" secondItem="cOA-KB-UpG" secondAttribute="centerX" id="cIH-EB-Qd6"/>
+                                                <constraint firstItem="bUK-r0-oXA" firstAttribute="centerY" secondItem="cOA-KB-UpG" secondAttribute="centerY" id="w2k-AP-XsI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="olSpiner" destination="bUK-r0-oXA" id="KbG-9e-bnT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
