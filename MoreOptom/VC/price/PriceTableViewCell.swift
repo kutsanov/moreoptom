@@ -12,6 +12,7 @@ class PriceTableViewCell: UITableViewCell {
 
     @IBOutlet var olName: UILabel!
     @IBOutlet var olOblast: UILabel!
+    @IBOutlet var olFirmName: UILabel!
     @IBOutlet var olNote: UILabel!
     @IBOutlet var olCost: UILabel!
     @IBOutlet var olImage: UIImageView!
@@ -27,6 +28,7 @@ class PriceTableViewCell: UITableViewCell {
         super.layoutSubviews()
         olName.text = tovar?.name
         olOblast.text = tovar?.oblast
+        olFirmName.text = tovar?.firmName
         olNote.text = tovar?.note
         
         if let costMin = tovar?.costMin {

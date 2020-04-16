@@ -19,6 +19,8 @@ class PricePrefTableViewController: UITableViewController {
     
     var changeSelect = ""
     
+    var selectKey = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,12 +50,15 @@ class PricePrefTableViewController: UITableViewController {
         switch cellId {
         case "cellType":
             data = UtilSelect.shared.typeLst()
+            selectKey = UtilsSettings.shared.typeKey
             break
         case "cellFish":
             data = UtilSelect.shared.fishLst()
+            selectKey = UtilsSettings.shared.fishKey
             break
         case "cellOblast":
             data = UtilSelect.shared.oblastLst()
+            selectKey = UtilsSettings.shared.oblastKey
             break
         default:
             break
@@ -63,61 +68,6 @@ class PricePrefTableViewController: UITableViewController {
         
         showPickerInActionSheet()
     }
-    
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "cellType", for: indexPath)
-     
-     cell.textLabel?.text = "test"
-     
-     return cell
-     }
-     */
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
@@ -135,10 +85,6 @@ extension PricePrefTableViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //self.dismiss(animated: false, completion: nil)
-        //UtilsSettings.shared.typeKey = row
-        
-        print(changeSelect)
         
         switch changeSelect {
         case "cellType":
@@ -156,6 +102,7 @@ extension PricePrefTableViewController: UIPickerViewDelegate, UIPickerViewDataSo
         default:
             break
         }
+        UtilsSettings.shared.updateDataTrue()
         self.tableView.reloadData()
         
     }
@@ -171,6 +118,8 @@ extension PricePrefTableViewController: UIPickerViewDelegate, UIPickerViewDataSo
         pickerView.delegate = self
         
         pickerView.frame.size.width = alert.view.frame.size.width - 15
+        
+        pickerView.selectRow(selectKey, inComponent: 0, animated: true)
         
         alert.view.addSubview(pickerView)
         

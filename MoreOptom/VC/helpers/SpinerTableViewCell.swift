@@ -11,6 +11,7 @@ import UIKit
 class SpinerTableViewCell: UITableViewCell {
     @IBOutlet var olSpiner: UIActivityIndicatorView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

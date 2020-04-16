@@ -13,18 +13,11 @@ class CompanyPrefTableViewController: UITableViewController {
     
     var dataForPicker = [UtilsSelectOption]()
     var changeSelect = ""
+    var selectKey = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         olTitleOblast.text = UtilsSettings.shared.oblastName
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -49,6 +42,7 @@ class CompanyPrefTableViewController: UITableViewController {
         switch cellId {
         case "cellOblast":
             data = UtilSelect.shared.oblastLst()
+            selectKey = UtilsSettings.shared.oblastKey
             break
         default:
             break
@@ -75,15 +69,11 @@ extension CompanyPrefTableViewController: UIPickerViewDelegate, UIPickerViewData
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //self.dismiss(animated: false, completion: nil)
-        //UtilsSettings.shared.typeKey = row
-        
-        print(changeSelect)
-        
         switch changeSelect {
         case "cellOblast":
             UtilsSettings.shared.oblastKey = row
             olTitleOblast.text = UtilsSettings.shared.oblastName
+            UtilsSettings.shared.updateDataTrue()
             break
         default:
             break
@@ -101,6 +91,8 @@ extension CompanyPrefTableViewController: UIPickerViewDelegate, UIPickerViewData
         let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
+        
+            pickerView.selectRow(selectKey, inComponent: 0, animated: true)
         
         pickerView.frame.size.width = alert.view.frame.size.width - 15
         

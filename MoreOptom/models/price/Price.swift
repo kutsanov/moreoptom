@@ -16,6 +16,7 @@ struct PriceItem: Codable {
     let name: String
     let costMin: Double?
     let oblast: String?
+    let firmName: String?
     let note: String?
     let photo: String?
     
@@ -27,6 +28,7 @@ struct PriceItem: Codable {
         case name
         case costMin = "cost_min"
         case oblast
+        case firmName = "firm_name"
         case note
         case photo
     }
@@ -43,25 +45,30 @@ struct Price: Codable {
     init(){
         self.tovars = []
     }
-
+    
     init(with tovars: [PriceItem]) {
         self.tovars = tovars
     }
     
     func fetchData(with page: Int, with complition: @escaping (Price) -> Void) {
         
-        let url = "/price?page=\(page)"
-           NetworkManager.shared.getData(from: url) { (data, response, error) in
-               if let error = error { print(error); return }
-               guard let data = data else { return }
+        let oblastId = UtilsSettings.shared.getOblastId()
+        let firshId = UtilsSettings.shared.getFishId()
+        let typeId = UtilsSettings.shared.getTypeId()
+        
+        let p = page - 1
+        
+        let url = "/price?page=\(p)&region_id=\(oblastId)&fish_id=\(firshId)&type_id=\(typeId)"
+        NetworkManager.shared.getData(from: url) { (data, response, error) in
+            if let error = error { print(error); return }
+            guard let data = data else { return }
             
-               do {
-                   let price = try JSONDecoder().decode(Price.self, from: data)
-                   complition(price)
-               } catch let jsonError {
-                   print(jsonError)
-               }
-           }
-           
-       }
+            do {
+                let price = try JSONDecoder().decode(Price.self, from: data)
+                complition(price)
+            } catch let jsonError {
+                print(jsonError)
+            }
+        }
+    }
 }

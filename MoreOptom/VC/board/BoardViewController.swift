@@ -1,71 +1,54 @@
 //
-//  PriceViewController.swift
+//  BoardViewController.swift
 //  MoreOptom
 //
-//  Created by Vova Kutsanov on 21.03.2020.
+//  Created by Vova Kutsanov on 23.03.2020.
 //  Copyright © 2020 Vova Kutsanov. All rights reserved.
 //
 
 import UIKit
 
-class PriceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var olTableView: UITableView!
-    @IBOutlet var olTopFish: UILabel!
-    @IBOutlet var olTopType: UILabel!
     @IBOutlet var olTopOblast: UILabel!
+    @IBOutlet var olTopType: UILabel!
     
-    private var tovars = [PriceItem]()
+    private var tovars = [BoardProviderItem]()
     
     private var fetchinMore = false
     private var fetchinEnd = false
     private var currentPage = 1
     
+    private var flagReloadSection = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         self.navigationController?.navigationBar.barTintColor = UtilsSettings.shared.colorBgTint
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UtilsSettings.shared.colorTint]
         self.navigationController?.navigationBar.tintColor = UtilsSettings.shared.colorTint
-            
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        olTableView.estimatedRowHeight = 44.0
-        olTableView.rowHeight = UITableView.automaticDimension        
-        olTableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let topFish = UtilsSettings.shared.fishName
-        olTopFish.text = "Продукция: \(topFish)"
-
-        let topType = UtilsSettings.shared.typeName
+        let topType = UtilsSettings.shared.boardTypeName
         olTopType.text = "Тип: \(topType)"
-
+        
         let topOblast = UtilsSettings.shared.oblastName
         olTopOblast.text = "Область: \(topOblast)"
         
-        if UtilsSettings.shared.updatePrice == true {
-            currentPage = 1
-            Price().fetchData(with: currentPage) { (obj) in
-                DispatchQueue.main.async {
-                    self.tovars = obj.tovars ?? []
-                    self.olTableView.reloadData()
-                    self.fetchinMore = false
-                }
-            }
-            
-            UtilsSettings.shared.updatePrice = false
+        if UtilsSettings.shared.updateBoard == true {
+            tovars = [BoardProviderItem]()
+            flagReloadSection = false
+            currentPage = 0
+            updateTable()
         }
-
-
+        
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -82,11 +65,11 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
             let tovar = tovars[indexPath.row]
             
             if tovar.photo == nil {
-                let cell = olTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PriceTableViewCell
+                let cell = olTableView.dequeueReusableCell(withIdentifier: "cellBoard", for: indexPath) as! BoardTableViewCell
                 cell.tovar = tovar
                 return cell
             } else {
-                let cell = olTableView.dequeueReusableCell(withIdentifier: "cellPhoto", for: indexPath) as! PriceTableViewCell
+                let cell = olTableView.dequeueReusableCell(withIdentifier: "cellBoardPhoto", for: indexPath) as! BoardTableViewCell
                 cell.tovar = tovar
                 return cell
             }
@@ -96,10 +79,16 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
             return cell
         }
         
-
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = tovars[indexPath.row]
+        performSegue(withIdentifier: "segueViewItem", sender: item)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        olTableView.layoutIfNeeded()
         return UITableView.automaticDimension
     }
     
@@ -113,35 +102,21 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if offsetY > contentHeight - scrollView.frame.height {
             if !fetchinMore {
-                fetchData()
+                updateTable()
             }
             
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let tovar = tovars[indexPath.row]
-        performSegue(withIdentifier: "segueViewTovar", sender: tovar)
-    }
-    
-//    @IBAction func unwindSegue(sehue: UIStoryboardSegue) {
-//        currentPage = 1
-//        Price().fetchData(with: currentPage) { (obj) in
-//            DispatchQueue.main.async {
-//                self.tovars = obj.tovars ?? []
-//                self.olTableView.reloadData()
-//                self.fetchinMore = false
-//            }
-//        }
-//    }
-    
-    private func fetchData() {
+    private func updateTable() {
         fetchinMore = true
         currentPage += 1
-        olTableView.reloadSections(IndexSet(integer: 1), with: .none)
-        Price().fetchData(with: currentPage) { (obj) in
+        if flagReloadSection == true {
+            olTableView.reloadSections(IndexSet(integer: 1), with: .none)
+        }
+        BoardProvider().fetchData(with: currentPage) { (obj) in
             DispatchQueue.main.async {
-                let tovars = obj.tovars ?? []
+                let tovars = obj.tovars
                 if tovars.count > 0 {
                     self.tovars.append(contentsOf: tovars)
                     self.fetchinMore = false
@@ -150,19 +125,18 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
                 self.olTableView.reloadData()
             }
-            UtilsSettings.shared.updatePrice = false
+            UtilsSettings.shared.updateBoard = false
         }
     }
     
-
     
-     // MARK: - Navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueViewTovar" {
-            let tovarVC = segue.destination as! TovarViewController
-            guard let priceItem = sender as? PriceItem else { return }
-            tovarVC.priceItem = priceItem
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueViewItem" {
+            let tovarVC = segue.destination as! BoardItemViewController
+            guard let tovarItem = sender as? BoardProviderItem else { return }
+            tovarVC.itemIn = tovarItem
         }
-     }
+    }
     
 }

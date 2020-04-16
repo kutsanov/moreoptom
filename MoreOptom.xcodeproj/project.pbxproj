@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F41E4612447AEA400272DC1 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41E4602447AEA400272DC1 /* Company.swift */; };
+		4F41E4632447B46C00272DC1 /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F41E4622447B46C00272DC1 /* CompanyTableViewCell.swift */; };
+		4F4A1519243F40AA0057BB7E /* Tovar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4A1518243F40AA0057BB7E /* Tovar.swift */; };
 		4F57C2CC2439C9DC00914250 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57C2CB2439C9DC00914250 /* NetworkManager.swift */; };
 		4F57C2CE243A0C5800914250 /* MainStatFishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57C2CD243A0C5800914250 /* MainStatFishTableViewCell.swift */; };
 		4F57C2D0243A0DF100914250 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57C2CF243A0DF100914250 /* Utils.swift */; };
@@ -16,9 +19,18 @@
 		4F700A9B242868F70044A8AF /* BoardPrefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F700A9A242868F70044A8AF /* BoardPrefTableViewController.swift */; };
 		4F700A9D242869120044A8AF /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F700A9C242869120044A8AF /* BoardViewController.swift */; };
 		4F7525772433B6A70096F434 /* MainStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7525762433B6A70096F434 /* MainStat.swift */; };
+		4F755849243CF804003E359C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F755848243CF804003E359C /* PhotoCollectionViewCell.swift */; };
+		4F7DBA1D244173DC005C2992 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7DBA1C244173DC005C2992 /* PhotoViewController.swift */; };
 		4F887A272426FCF500E13E57 /* PricePrefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F887A262426FCF500E13E57 /* PricePrefTableViewController.swift */; };
+		4FB150262443FA9D0082A1B4 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB150252443FA9D0082A1B4 /* Board.swift */; };
+		4FB15029244406480082A1B4 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB15028244406480082A1B4 /* BoardTableViewCell.swift */; };
+		4FB577242445730C00077D4E /* BoardItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB577232445730C00077D4E /* BoardItemViewController.swift */; };
+		4FB5772724461FC100077D4E /* BoardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5772624461FC100077D4E /* BoardItem.swift */; };
+		4FB5772924462FA400077D4E /* BoardPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5772824462FA400077D4E /* BoardPhotoCollectionViewCell.swift */; };
+		4FB5772B2446A81800077D4E /* BoardPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5772A2446A81800077D4E /* BoardPhotoViewController.swift */; };
 		4FBD83AD2428EAF1006F04D9 /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD83AC2428EAF1006F04D9 /* CompanyViewController.swift */; };
 		4FBD83AF2428EB02006F04D9 /* CompanyPrefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD83AE2428EB02006F04D9 /* CompanyPrefTableViewController.swift */; };
+		4FC8B168243C340B000D8F3D /* TovarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8B167243C340B000D8F3D /* TovarViewController.swift */; };
 		4FDC214B2430FE320034E2B8 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDC214A2430FE320034E2B8 /* MainTableViewController.swift */; };
 		4FF070D724259D8600BC2577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070D624259D8600BC2577 /* AppDelegate.swift */; };
 		4FF070D924259D8600BC2577 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070D824259D8600BC2577 /* SceneDelegate.swift */; };
@@ -28,11 +40,14 @@
 		4FF070F02425B25400BC2577 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070EF2425B25400BC2577 /* PriceViewController.swift */; };
 		4FF070F42425C95E00BC2577 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070F32425C95E00BC2577 /* Price.swift */; };
 		4FF070F72425CA4300BC2577 /* UtilsSelectOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070F62425CA4300BC2577 /* UtilsSelectOption.swift */; };
-		4FF070F92425D79B00BC2577 /* UtilsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070F82425D79B00BC2577 /* UtilsSelect.swift */; };
+		4FF070F92425D79B00BC2577 /* UtilSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070F82425D79B00BC2577 /* UtilSelect.swift */; };
 		4FF070FB2425E45B00BC2577 /* UtilsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF070FA2425E45B00BC2577 /* UtilsSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F41E4602447AEA400272DC1 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		4F41E4622447B46C00272DC1 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
+		4F4A1518243F40AA0057BB7E /* Tovar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tovar.swift; sourceTree = "<group>"; };
 		4F57C2CB2439C9DC00914250 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4F57C2CD243A0C5800914250 /* MainStatFishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStatFishTableViewCell.swift; sourceTree = "<group>"; };
 		4F57C2CF243A0DF100914250 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -42,9 +57,18 @@
 		4F700A9A242868F70044A8AF /* BoardPrefTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPrefTableViewController.swift; sourceTree = "<group>"; };
 		4F700A9C242869120044A8AF /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		4F7525762433B6A70096F434 /* MainStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStat.swift; sourceTree = "<group>"; };
+		4F755848243CF804003E359C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4F7DBA1C244173DC005C2992 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4F887A262426FCF500E13E57 /* PricePrefTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePrefTableViewController.swift; sourceTree = "<group>"; };
+		4FB150252443FA9D0082A1B4 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		4FB15028244406480082A1B4 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
+		4FB577232445730C00077D4E /* BoardItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardItemViewController.swift; sourceTree = "<group>"; };
+		4FB5772624461FC100077D4E /* BoardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardItem.swift; sourceTree = "<group>"; };
+		4FB5772824462FA400077D4E /* BoardPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4FB5772A2446A81800077D4E /* BoardPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPhotoViewController.swift; sourceTree = "<group>"; };
 		4FBD83AC2428EAF1006F04D9 /* CompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
 		4FBD83AE2428EB02006F04D9 /* CompanyPrefTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPrefTableViewController.swift; sourceTree = "<group>"; };
+		4FC8B167243C340B000D8F3D /* TovarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TovarViewController.swift; sourceTree = "<group>"; };
 		4FDC214A2430FE320034E2B8 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		4FF070D324259D8600BC2577 /* MoreOptom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreOptom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF070D624259D8600BC2577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +80,7 @@
 		4FF070EF2425B25400BC2577 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		4FF070F32425C95E00BC2577 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		4FF070F62425CA4300BC2577 /* UtilsSelectOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsSelectOption.swift; sourceTree = "<group>"; };
-		4FF070F82425D79B00BC2577 /* UtilsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsSelect.swift; sourceTree = "<group>"; };
+		4FF070F82425D79B00BC2577 /* UtilSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilSelect.swift; sourceTree = "<group>"; };
 		4FF070FA2425E45B00BC2577 /* UtilsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,11 +95,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F41E45F2447AE6400272DC1 /* company */ = {
+			isa = PBXGroup;
+			children = (
+				4FBD83AE2428EB02006F04D9 /* CompanyPrefTableViewController.swift */,
+				4F41E4622447B46C00272DC1 /* CompanyTableViewCell.swift */,
+				4FBD83AC2428EAF1006F04D9 /* CompanyViewController.swift */,
+			);
+			path = company;
+			sourceTree = "<group>";
+		};
 		4F57C2D3243A585D00914250 /* price */ = {
 			isa = PBXGroup;
 			children = (
 				4FF070EF2425B25400BC2577 /* PriceViewController.swift */,
 				4F57C2D1243A499A00914250 /* PriceTableViewCell.swift */,
+				4F7DBA1C244173DC005C2992 /* PhotoViewController.swift */,
+				4F755848243CF804003E359C /* PhotoCollectionViewCell.swift */,
+				4FC8B167243C340B000D8F3D /* TovarViewController.swift */,
 				4F887A262426FCF500E13E57 /* PricePrefTableViewController.swift */,
 			);
 			path = price;
@@ -105,6 +142,28 @@
 				4F7525762433B6A70096F434 /* MainStat.swift */,
 			);
 			path = mainVC;
+			sourceTree = "<group>";
+		};
+		4FB150272443FDB40082A1B4 /* board */ = {
+			isa = PBXGroup;
+			children = (
+				4F700A9A242868F70044A8AF /* BoardPrefTableViewController.swift */,
+				4FB577232445730C00077D4E /* BoardItemViewController.swift */,
+				4FB5772824462FA400077D4E /* BoardPhotoCollectionViewCell.swift */,
+				4FB5772A2446A81800077D4E /* BoardPhotoViewController.swift */,
+				4F700A9C242869120044A8AF /* BoardViewController.swift */,
+				4FB15028244406480082A1B4 /* BoardTableViewCell.swift */,
+			);
+			path = board;
+			sourceTree = "<group>";
+		};
+		4FB5772524461FAD00077D4E /* board */ = {
+			isa = PBXGroup;
+			children = (
+				4FB150252443FA9D0082A1B4 /* Board.swift */,
+				4FB5772624461FC100077D4E /* BoardItem.swift */,
+			);
+			path = board;
 			sourceTree = "<group>";
 		};
 		4FF070CA24259D8500BC2577 = {
@@ -152,11 +211,9 @@
 				4F57C2D5243B951200914250 /* helpers */,
 				4F57C2D4243A586F00914250 /* main */,
 				4F57C2D3243A585D00914250 /* price */,
-				4FBD83AC2428EAF1006F04D9 /* CompanyViewController.swift */,
-				4FBD83AE2428EB02006F04D9 /* CompanyPrefTableViewController.swift */,
+				4FB150272443FDB40082A1B4 /* board */,
+				4F41E45F2447AE6400272DC1 /* company */,
 				4FF070DC24259D8600BC2577 /* Main.storyboard */,
-				4F700A9A242868F70044A8AF /* BoardPrefTableViewController.swift */,
-				4F700A9C242869120044A8AF /* BoardViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -164,8 +221,10 @@
 		4FF070F12425C91500BC2577 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				4FB5772524461FAD00077D4E /* board */,
 				4F7525752433B6730096F434 /* mainVC */,
 				4FF070F22425C91E00BC2577 /* price */,
+				4F41E4602447AEA400272DC1 /* Company.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -174,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF070F32425C95E00BC2577 /* Price.swift */,
+				4F4A1518243F40AA0057BB7E /* Tovar.swift */,
 			);
 			path = price;
 			sourceTree = "<group>";
@@ -182,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF070F62425CA4300BC2577 /* UtilsSelectOption.swift */,
-				4FF070F82425D79B00BC2577 /* UtilsSelect.swift */,
+				4FF070F82425D79B00BC2577 /* UtilSelect.swift */,
 				4FF070FA2425E45B00BC2577 /* UtilsSettings.swift */,
 				4F57C2CB2439C9DC00914250 /* NetworkManager.swift */,
 				4F57C2CF243A0DF100914250 /* Utils.swift */,
@@ -264,23 +324,35 @@
 				4FF070FB2425E45B00BC2577 /* UtilsSettings.swift in Sources */,
 				4FDC214B2430FE320034E2B8 /* MainTableViewController.swift in Sources */,
 				4F700A9D242869120044A8AF /* BoardViewController.swift in Sources */,
+				4F4A1519243F40AA0057BB7E /* Tovar.swift in Sources */,
+				4FB5772924462FA400077D4E /* BoardPhotoCollectionViewCell.swift in Sources */,
 				4F57C2CE243A0C5800914250 /* MainStatFishTableViewCell.swift in Sources */,
+				4FB5772724461FC100077D4E /* BoardItem.swift in Sources */,
+				4F7DBA1D244173DC005C2992 /* PhotoViewController.swift in Sources */,
 				4F57C2D7243B952400914250 /* SpinerTableViewCell.swift in Sources */,
 				4FBD83AF2428EB02006F04D9 /* CompanyPrefTableViewController.swift in Sources */,
+				4FB15029244406480082A1B4 /* BoardTableViewCell.swift in Sources */,
 				4F57C2CC2439C9DC00914250 /* NetworkManager.swift in Sources */,
 				4FF070F72425CA4300BC2577 /* UtilsSelectOption.swift in Sources */,
 				4FF070D724259D8600BC2577 /* AppDelegate.swift in Sources */,
+				4FB577242445730C00077D4E /* BoardItemViewController.swift in Sources */,
+				4F41E4632447B46C00272DC1 /* CompanyTableViewCell.swift in Sources */,
+				4F755849243CF804003E359C /* PhotoCollectionViewCell.swift in Sources */,
+				4FB5772B2446A81800077D4E /* BoardPhotoViewController.swift in Sources */,
 				4F62B4252431098700921898 /* MainStatTableViewCell.swift in Sources */,
 				4F57C2D2243A499A00914250 /* PriceTableViewCell.swift in Sources */,
-				4FF070F92425D79B00BC2577 /* UtilsSelect.swift in Sources */,
+				4FF070F92425D79B00BC2577 /* UtilSelect.swift in Sources */,
 				4FF070F02425B25400BC2577 /* PriceViewController.swift in Sources */,
 				4F57C2D0243A0DF100914250 /* Utils.swift in Sources */,
+				4FB150262443FA9D0082A1B4 /* Board.swift in Sources */,
 				4FF070F42425C95E00BC2577 /* Price.swift in Sources */,
 				4FBD83AD2428EAF1006F04D9 /* CompanyViewController.swift in Sources */,
 				4F700A9B242868F70044A8AF /* BoardPrefTableViewController.swift in Sources */,
 				4F887A272426FCF500E13E57 /* PricePrefTableViewController.swift in Sources */,
 				4F7525772433B6A70096F434 /* MainStat.swift in Sources */,
+				4FC8B168243C340B000D8F3D /* TovarViewController.swift in Sources */,
 				4FF070D924259D8600BC2577 /* SceneDelegate.swift in Sources */,
+				4F41E4612447AEA400272DC1 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

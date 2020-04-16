@@ -19,6 +19,8 @@ class NetworkManager {
         let urlAddress = UtilsSettings.shared.apiUrl + urlString
         guard let url = URL(string: urlAddress) else { return }
         
+        print(urlAddress)
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue(UtilsSettings.shared.apiKey, forHTTPHeaderField: "x-fawesome-token")
 
