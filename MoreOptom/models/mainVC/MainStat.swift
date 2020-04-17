@@ -44,7 +44,7 @@ struct MainStat: Codable {
         self.tovarCnt = 0
         self.tovars = []
     }
-
+    
     init(with firmCnt: Int, with tovarCnt: Int, with tovars: [MainStatTovar]) {
         self.firmCnt = firmCnt
         self.tovarCnt = tovarCnt
@@ -52,7 +52,7 @@ struct MainStat: Codable {
     }
     
     func fetchData(with complition: @escaping (MainStat) -> Void) {
-
+        
         NetworkManager.shared.getData(from: "/stat/main") { (data, response, error) in
             if let error = error { print(error); return }
             guard let data = data else { return }

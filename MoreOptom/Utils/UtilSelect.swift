@@ -272,7 +272,7 @@ struct UtilSelect {
             UtilsSelectOption(id: 1, title: "Продажа"),
             UtilsSelectOption(id: 2, title: "Покупка"),
             UtilsSelectOption(id: 3, title: "Услуги"),
-
+            
         ]}
     
 }

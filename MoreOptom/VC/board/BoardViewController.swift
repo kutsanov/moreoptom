@@ -15,7 +15,6 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var olTopType: UILabel!
     
     private var tovars = [BoardProviderItem]()
-    
     private var fetchinMore = false
     private var fetchinEnd = false
     private var currentPage = 1
@@ -43,7 +42,6 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
             currentPage = 0
             updateTable()
         }
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -104,7 +102,6 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
             if !fetchinMore {
                 updateTable()
             }
-            
         }
     }
     
@@ -129,7 +126,6 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueViewItem" {
@@ -138,5 +134,4 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
             tovarVC.itemIn = tovarItem
         }
     }
-    
 }

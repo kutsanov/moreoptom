@@ -23,11 +23,11 @@ class MainStatFishTableViewCell: UITableViewCell {
             olName.text = tovar.fishName
             olMinCost.text = "Минимальная цена: \(tovar.costMin) р."
             olMaxCost.text = "Минимальная цена: \(tovar.costMax) р."
-                NetworkManager.shared.getImage(from: tovar.photo, comletion: { (img) in
-                    DispatchQueue.main.async {
+            NetworkManager.shared.getImage(from: tovar.photo, comletion: { (img) in
+                DispatchQueue.main.async {
                     self.olImage.image = img
-                    }
-                })
+                }
+            })
         }
     }
     

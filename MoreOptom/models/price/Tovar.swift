@@ -14,7 +14,7 @@ struct Image: Codable {
     let url: String
     let urlSm: String
     let urlMd: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case url
@@ -146,6 +146,6 @@ struct Tovar: Codable {
             }
         }
     }
-
+    
 }
 

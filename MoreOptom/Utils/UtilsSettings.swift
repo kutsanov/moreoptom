@@ -19,7 +19,7 @@ class UtilsSettings {
     
     let apiUrl = "http://api.moreoptom.ru/v1"
     let apiKey = "kklPNkKwHfY345JMKHJFDhdv"
-
+    
     var typeKey = 0
     var fishKey = 0
     var oblastKey = 0
@@ -28,7 +28,7 @@ class UtilsSettings {
     var updateCompany = true
     var updatePrice = true
     var updateBoard = true
-
+    
     var typeName: String {
         get {
             UtilSelect.shared.typeLst().indices.contains(self.typeKey) == true ? UtilSelect.shared.typeLst()[self.typeKey].title : ""
@@ -46,7 +46,7 @@ class UtilsSettings {
             UtilSelect.shared.oblastLst().indices.contains(self.oblastKey) == true ? UtilSelect.shared.oblastLst()[self.oblastKey].title : ""
         }
     }
-
+    
     var boardTypeName: String {
         get {
             UtilSelect.shared.boardTypeLst().indices.contains(self.boardTypeKey) == true ? UtilSelect.shared.boardTypeLst()[self.boardTypeKey].title : ""

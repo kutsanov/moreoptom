@@ -19,14 +19,13 @@ class CompanyPrefTableViewController: UITableViewController {
         super.viewDidLoad()
         olTitleOblast.text = UtilsSettings.shared.oblastName
     }
-
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
@@ -49,11 +48,9 @@ class CompanyPrefTableViewController: UITableViewController {
         }
         
         dataForPicker = data
-        
         showPickerInActionSheet()
     }
 }
-
 
 extension CompanyPrefTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -92,7 +89,7 @@ extension CompanyPrefTableViewController: UIPickerViewDelegate, UIPickerViewData
         pickerView.dataSource = self
         pickerView.delegate = self
         
-            pickerView.selectRow(selectKey, inComponent: 0, animated: true)
+        pickerView.selectRow(selectKey, inComponent: 0, animated: true)
         
         pickerView.frame.size.width = alert.view.frame.size.width - 15
         
@@ -109,8 +106,6 @@ extension CompanyPrefTableViewController: UIPickerViewDelegate, UIPickerViewData
                 subView.removeConstraint(constraint)
             }
         }
-        
-        
         
         self.present(alert, animated: true, completion: nil)
         

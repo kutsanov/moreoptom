@@ -14,11 +14,8 @@ class PricePrefTableViewController: UITableViewController {
     @IBOutlet var olTitleFish: UILabel!
     @IBOutlet var olTitleOblast: UILabel!
     
-    
     var dataForPicker = [UtilsSelectOption]()
-    
     var changeSelect = ""
-    
     var selectKey = 0
     
     override func viewDidLoad() {
@@ -30,7 +27,6 @@ class PricePrefTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -65,7 +61,6 @@ class PricePrefTableViewController: UITableViewController {
         }
         
         dataForPicker = data
-        
         showPickerInActionSheet()
     }
     
@@ -104,7 +99,6 @@ extension PricePrefTableViewController: UIPickerViewDelegate, UIPickerViewDataSo
         }
         UtilsSettings.shared.updateDataTrue()
         self.tableView.reloadData()
-        
     }
     
     func showPickerInActionSheet() {
@@ -135,12 +129,6 @@ extension PricePrefTableViewController: UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
         
-        
-        
         self.present(alert, animated: true, completion: nil)
-        
     }
-    
-    
-    
 }

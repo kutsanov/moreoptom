@@ -31,8 +31,6 @@ class MainStatTableViewCell: UITableViewCell {
         super.awakeFromNib()
         olFirmLabel.textColor =  UtilsSettings.shared.colorGray
         olTovarLabel.textColor =  UtilsSettings.shared.colorGray
-    
-        
     }
     
     @IBAction func actionGoPrice(_ sender: Any) {
@@ -40,5 +38,5 @@ class MainStatTableViewCell: UITableViewCell {
         tabBarController.selectedIndex = 1
     }
     
-
+    
 }

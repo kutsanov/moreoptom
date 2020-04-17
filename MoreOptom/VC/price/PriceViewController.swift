@@ -23,11 +23,10 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         self.navigationController?.navigationBar.barTintColor = UtilsSettings.shared.colorBgTint
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UtilsSettings.shared.colorTint]
         self.navigationController?.navigationBar.tintColor = UtilsSettings.shared.colorTint
-            
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,10 +38,10 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let topFish = UtilsSettings.shared.fishName
         olTopFish.text = "Продукция: \(topFish)"
-
+        
         let topType = UtilsSettings.shared.typeName
         olTopType.text = "Тип: \(topType)"
-
+        
         let topOblast = UtilsSettings.shared.oblastName
         olTopOblast.text = "Область: \(topOblast)"
         
@@ -58,10 +57,10 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             UtilsSettings.shared.updatePrice = false
         }
-
-
+        
+        
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -96,7 +95,7 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
             return cell
         }
         
-
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -124,17 +123,6 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
         performSegue(withIdentifier: "segueViewTovar", sender: tovar)
     }
     
-//    @IBAction func unwindSegue(sehue: UIStoryboardSegue) {
-//        currentPage = 1
-//        Price().fetchData(with: currentPage) { (obj) in
-//            DispatchQueue.main.async {
-//                self.tovars = obj.tovars ?? []
-//                self.olTableView.reloadData()
-//                self.fetchinMore = false
-//            }
-//        }
-//    }
-    
     private func fetchData() {
         fetchinMore = true
         currentPage += 1
@@ -154,15 +142,13 @@ class PriceViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-
-    
-     // MARK: - Navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueViewTovar" {
             let tovarVC = segue.destination as! TovarViewController
             guard let priceItem = sender as? PriceItem else { return }
             tovarVC.priceItem = priceItem
         }
-     }
+    }
     
 }

@@ -16,7 +16,6 @@ class BoardTableViewCell: UITableViewCell {
     
     var tovar: BoardProviderItem?
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         olTypeName.text = tovar?.tName
@@ -24,25 +23,11 @@ class BoardTableViewCell: UITableViewCell {
         olTxt.text = tovar?.txtShort ?? tovar?.txt
         
         if let photo = tovar?.photo {
-                NetworkManager.shared.getImage(from: photo, comletion: { (img) in
-                    DispatchQueue.main.async {
+            NetworkManager.shared.getImage(from: photo, comletion: { (img) in
+                DispatchQueue.main.async {
                     self.olImage.image = img
-                    }
-                })
+                }
+            })
         }
-        
-        
     }
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-    
-    
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
-
 }

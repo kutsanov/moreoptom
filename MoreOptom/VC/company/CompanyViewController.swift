@@ -20,7 +20,7 @@ class CompanyViewController: UIViewController, UITableViewDataSource, UITableVie
     private var fetchinEnd = false
     private var currentPage = 0
     private var flagReloadSection = false
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +39,7 @@ class CompanyViewController: UIViewController, UITableViewDataSource, UITableVie
             currentPage = 0
             updateTable()
         }
-        
     }
-    
-
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -99,30 +96,18 @@ class CompanyViewController: UIViewController, UITableViewDataSource, UITableVie
             olTable.reloadSections(IndexSet(integer: 1), with: .none)
         }
         flagReloadSection = true
-            Company().fetchData(with: currentPage, with: fnd) { (obj) in
-                DispatchQueue.main.async {
-                    let comppanys = obj
-                    if comppanys.count > 0 {
-                        self.comppanys.append(contentsOf: comppanys)
-                        self.fetchinMore = false
-                    } else {
-                        self.fetchinEnd = true
-                    }
-                    self.olTable.reloadData()
+        Company().fetchData(with: currentPage, with: fnd) { (obj) in
+            DispatchQueue.main.async {
+                let comppanys = obj
+                if comppanys.count > 0 {
+                    self.comppanys.append(contentsOf: comppanys)
+                    self.fetchinMore = false
+                } else {
+                    self.fetchinEnd = true
                 }
+                self.olTable.reloadData()
+            }
             UtilsSettings.shared.updateCompany = false
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

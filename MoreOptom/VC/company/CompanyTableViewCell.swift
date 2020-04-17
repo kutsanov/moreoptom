@@ -15,16 +15,15 @@ class CompanyTableViewCell: UITableViewCell {
     @IBOutlet var olUrl: UIImageView!
     
     var company: CompanyItem!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         if self.traitCollection.userInterfaceStyle == .dark {
             olUrl.image = #imageLiteral(resourceName: "openUrl-white")
         }
-
     }
-        
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -36,23 +35,15 @@ class CompanyTableViewCell: UITableViewCell {
         olUrl.addGestureRecognizer(tap)
     }
     
-        @objc func tapUrl(sender:UITapGestureRecognizer) {
-            print(company.id)
-            print(company.seoUrl)
-            var urlAddress = "https://moreoptom.ru/c/\(company.seoUrl)";
-            if company.seoUrl == "" {
-                urlAddress = "https://moreoptom.ru/company/get?id=\(company.id)"
-            }
-            if let url = URL(string: urlAddress) {
-                UIApplication.shared.open(url)
-            }
+    @objc func tapUrl(sender:UITapGestureRecognizer) {
+        print(company.id)
+        print(company.seoUrl)
+        var urlAddress = "https://moreoptom.ru/c/\(company.seoUrl)";
+        if company.seoUrl == "" {
+            urlAddress = "https://moreoptom.ru/company/get?id=\(company.id)"
         }
-
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        if let url = URL(string: urlAddress) {
+            UIApplication.shared.open(url)
+        }
     }
-
 }

@@ -23,7 +23,7 @@ class NetworkManager {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue(UtilsSettings.shared.apiKey, forHTTPHeaderField: "x-fawesome-token")
-
+        
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             
             guard let data = data else { return }

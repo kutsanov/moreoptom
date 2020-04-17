@@ -16,8 +16,6 @@ struct ImageStruct {
 class TovarViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var olMainStackView: UIStackView!
-    
-    
     @IBOutlet var olName: UILabel!
     @IBOutlet var olPhotoCollection: UICollectionView!
     @IBOutlet var olLibFishName: UILabel!
@@ -59,20 +57,20 @@ class TovarViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            olPhotoCollection.isHidden = true
-            olBlockAdv.isHidden = true
-            olBlockNote.isHidden = true
-            olBlockCost1.isHidden = true
-            olBlockCost2.isHidden = true
-            olBlockCost3.isHidden = true
-            olBlockContact.isHidden = true
-            olName.isHidden = true
+        olPhotoCollection.isHidden = true
+        olBlockAdv.isHidden = true
+        olBlockNote.isHidden = true
+        olBlockCost1.isHidden = true
+        olBlockCost2.isHidden = true
+        olBlockCost3.isHidden = true
+        olBlockContact.isHidden = true
+        olName.isHidden = true
         
         let id = priceItem.id
-
+        
         Tovar().fetchData(with: id) { (obj) in
             self.tovar = obj
-
+            
             if self.tovar.id > 0 {
                 DispatchQueue.main.async {
                     self.setVars()
@@ -90,12 +88,8 @@ class TovarViewController: UIViewController, UICollectionViewDataSource, UIColle
                         }
                     })
                 }
-                
-
             }
-            
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -110,29 +104,27 @@ class TovarViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     @objc func tapPhone(sender:UITapGestureRecognizer) {
-        print(tovar.mobile)
-           let url = URL(string: "tel://\(tovar.mobile)")!
-         if UIApplication.shared.canOpenURL(url) {
-             UIApplication.shared.open(url)
-         }
+        let url = URL(string: "tel://\(tovar.mobile)")!
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
     }
     
-
     private func resizeImage(image: UIImage) -> UIImage {
-      let size = image.size
+        let size = image.size
         let scale = Double(size.width / size.height)
         let height = Double(heightImage)
         let width = height * scale
         
-      let newSize = CGSize(width: width,  height: height)
-      let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-
-      UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-      image.draw(in: rect)
-      let newImage = UIGraphicsGetImageFromCurrentImageContext()
-      UIGraphicsEndImageContext()
-
-      return newImage!
+        let newSize = CGSize(width: width,  height: height)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
     
     private func returnUnit(txt: String) -> String {
@@ -144,14 +136,6 @@ class TovarViewController: UIViewController, UICollectionViewDataSource, UIColle
     private func setVars() {
         
         var cost = ""
-        
-//        tovar.note = "тут какой-то текст тут какой-то текст тут какой-то текст тут какой-то текст тут какой-то текст тут какой-то текст тут какой-то текст тут какой-то текст "
-//
-//        tovar.cost1 = 1234.5
-//        tovar.cost2 = 134.5
-//        tovar.cost3 = 80
-//        tovar.cost1Note = "тут какой-то текст тут какой-то текст тут какой-то текст тут какой-то текст "
-
         
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
@@ -188,7 +172,7 @@ class TovarViewController: UIViewController, UICollectionViewDataSource, UIColle
         if tovar.cost1 > 0 { olBlockCost1.isHidden = false }
         if tovar.cost2 > 0 { olBlockCost2.isHidden = false }
         if tovar.cost3 > 0 { olBlockCost3.isHidden = false }
-
+        
         olBlockContact.isHidden = false
         
         if (tovar.mobile != "") {
@@ -198,14 +182,14 @@ class TovarViewController: UIViewController, UICollectionViewDataSource, UIColle
             olBlockPhone.backgroundColor = UtilsSettings.shared.colorBgTint
             olFirmPhone.textColor = UtilsSettings.shared.colorWhite
             olFirmPhoneTitle.textColor = UtilsSettings.shared.colorWhite
-
+            
         }
         
         olBlockNote.layoutIfNeeded()
         olMainStackView.layoutIfNeeded()
         
         olPhotoCollection.reloadData()
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -214,7 +198,7 @@ class TovarViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = olPhotoCollection.dequeueReusableCell(withReuseIdentifier: "cellPhoto", for: indexPath) as! PhotoCollectionViewCell
-
+        
         cell.olPhoto.image = images[indexPath.row].image
         
         return cell
@@ -239,12 +223,11 @@ class TovarViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goPhotoController", sender: images[indexPath.row])
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goPhotoController" {
             let photoVC = segue.destination as! PhotoViewController
             photoVC.imageObj = sender as? ImageStruct
         }
     }
-
 }

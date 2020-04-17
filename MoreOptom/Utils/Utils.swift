@@ -24,19 +24,19 @@ class Utils {
     }
     
     func resizeImage(height heightImage: CGFloat, image: UIImage) -> UIImage {
-      let size = image.size
+        let size = image.size
         let scale = Double(size.width / size.height)
         let height = Double(heightImage)
         let width = height * scale
         
-      let newSize = CGSize(width: width,  height: height)
-      let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-
-      UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-      image.draw(in: rect)
-      let newImage = UIGraphicsGetImageFromCurrentImageContext()
-      UIGraphicsEndImageContext()
-
-      return newImage!
+        let newSize = CGSize(width: width,  height: height)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
 }
